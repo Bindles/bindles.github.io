@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Image Layout</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex flex-col h-screen w-screen">
+        <div class="flex-shrink-0 h-1/2 w-full">
+            <img src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/freude/sky/sky-00-teaser-hd.jpg?imwidth=1280" alt="Image 1" class="object-cover h-full w-full">
+        </div>
+        <hr class="border-white m-0">
+        <div class="flex h-1/2 w-full relative">
+            <div class="flex-grow-0 flex-shrink-0 w-1/2 h-full">
+                <img src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/digital-journey/artcar20/ac20-00-teaser-square.jpg?imwidth=1024" alt="Image 2" class="object-cover h-full w-full">
+            </div>
+            <div class="border-l border-white absolute left-1/2 top-0 h-full"></div>
+            <div class="flex-grow-0 flex-shrink-0 w-1/2 h-full">
+                <img src="https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/freude/cannes24/cannes24-00-teaser-square.jpg?imwidth=1024" alt="Image 3" class="object-cover h-full w-full">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

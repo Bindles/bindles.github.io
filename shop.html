@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Royalty - Shop</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-black">
+
+    <!-- Header -->
+    <header class="bg-white border-b-2 border-black navbar">
+        <div class="container mx-auto flex justify-between items-center h-11 p-2">
+            <div class="flex items-center">
+                <!-- <img src="Logo01.png" alt="Urban Royalty Logo" class="h-10"> -->
+                <nav class="ml-6 space-x-4">
+                    <a href="index.html" class="text-black hover:underline">Home</a>
+                    <a href="shop.html" class="text-black hover:underline">Shop</a>
+                    <a href="#" class="text-black hover:underline">About</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-2 relative">
+                <button id="searchButton" class="text-black">
+                    <i class="fas fa-search h-6 w-6"></i>
+                </button>
+                <div id="searchBar" class="hidden flex items-center">
+                    <input type="text" placeholder="Search..." class="border border-gray-400 px-2 py-1 rounded-md w-32 mr-1">
+                    <button type="submit" class="text-black bg-black py-1 px-1 hover:bg-blue-500 hover:text-black border-2 border-black">Submit</button>
+                </div>
+                <button id="cartButton" class="text-black">
+                    <i class="fas fa-shopping-cart h-6 w-6"></i>
+                </button>
+                <button id="loginButton" class="text-black">
+                    <i class="fas fa-user h-6 w-6"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Listing -->
+    <section class="py-16">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-8">Products</h2>
+            <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t-2 border-black py-4">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center space-x-4 mb-4">
+                <a href="#" class="text-black hover:text-gray-700">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19.633 2H4.367A2.371 2.371 0 002 4.367v15.266A2.371 2.371 0 004.367 22h8.2v-6.773h-2.3v-2.64h2.3v-1.947c0-2.262 1.38-3.506 3.394-3.506.96 0 1.785.07 2.024.102v2.348l-1.39.001c-1.089 0-1.3.518-1.3 1.276v1.726h2.598l-.339 2.64h-2.259V22h4.436A2.371 2.371 0 0022 19.633V4.367A2.371 2.371 0 0019.633 2z"/></svg>
+                </a>
+                <a href="#" class="text-black hover:text-gray-700">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557a9.793 9.793 0 01-2.828.775A4.939 4.939 0 0023.337 3.5a9.798 9.798 0 01-3.104 1.184 4.917 4.917 0 00-8.384 4.482A13.945 13.945 0 011.671 3.15a4.916 4.916 0 001.523 6.557A4.901 4.901 0 01.964 9.5v.062a4.916 4.916 0 003.94 4.817 4.902 4.902 0 01-2.212.084 4.917 4.917 0 004.588 3.417 9.868 9.868 0 01-6.1 2.104c-.395 0-.785-.023-1.17-.067a13.924 13.924 0 007.548 2.213c9.058 0 14.009-7.502 14.009-14.002 0-.213-.005-.426-.014-.638A10.002 10.002 0 0024 4.557z"/></svg>
+                </a>
+                <a href="#" class="text-black hover:text-gray-700">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c-3.204 0-5.845 2.641-5.845 5.845 0 4.501 5.845 9.984 5.845 9.984s5.845-5.483 5.845-9.984c0-3.204-2.641-5.845-5.845-5.845zm0 9.668c-2.115 0-3.823-1.708-3.823-3.823s1.708-3.823 3.823-3.823 3.823 1.708 3.823 3.823-1.708 3.823-3.823 3.823zm6.742-10.006c0 1.081-.876 1.957-1.957 1.957s-1.957-.876-1.957-1.957.876-1.957 1.957-1.957 1.957.876 1.957 1.957z"/></svg>
+                </a>
+            </div>
+            <p class="text-gray-700">&copy; 2024 Urban Royalty. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.js"></script>
+    <script>
+        const products = [
+            {
+                name: "Product Name 1",
+                type: "T-Shirt",
+                price: "$20.00",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "img/shirt-smp-01.jpg",
+                colors: ["Red", "Blue", "Green"],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                name: "Product Name 2",
+                type: "T-Shirt",
+                price: "$20.00",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "img/shirt-smp-02.webp",
+                colors: ["Red", "Blue", "Green"],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                name: "Product Name 3",
+                type: "T-Shirt",
+                price: "$20.00",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "img/shirt-smp-03.webp",
+                colors: ["Red", "Blue", "Green"],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                name: "Product Name 1",
+                type: "T-Shirt",
+                price: "$20.00",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "img/shirt-smp-01.jpg",
+                colors: ["Red", "Blue", "Green"],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                name: "Product Name 2",
+                type: "T-Shirt",
+                price: "$20.00",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "img/shirt-smp-02.webp",
+                colors: ["Red", "Blue", "Green"],
+                sizes: ["S", "M", "L", "XL"]
+            },
+            {
+                name: "Product Name 3",
+                type: "T-Shirt",
+                price: "$20.00",
+                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                image: "img/shirt-smp-03.webp",
+                colors: ["Red", "Blue", "Green"],
+                sizes: ["S", "M", "L", "XL"]
+            }
+        ];
+
+        const productListContainer = document.getElementById('product-list');
+
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('border-2', 'border-black', 'p-4');
+
+            const productImage = document.createElement('img');
+            productImage.src = product.image;
+            productImage.alt = product.name + ' Image';
+            productImage.classList.add('w-full', 'h-48', 'object-cover', 'mb-4');
+
+            const productName = document.createElement('h3');
+            productName.textContent = product.name;
+            productName.classList.add('text-xl', 'font-semibold');
+
+            const productType = document.createElement('p');
+            productType.textContent = 'Type: ' + product.type;
+            productType.classList.add('text-gray-700');
+
+            const productPrice = document.createElement('p');
+            productPrice.textContent = 'Price: ' + product.price;
+            productPrice.classList.add('text-gray-700');
+
+            const productDescription = document.createElement('p');
+            productDescription.textContent = 'Description: ' + product.description;
+            productDescription.classList.add('text-gray-700', 'mb-4');
+
+            const productColors = document.createElement('p');
+            productColors.textContent = 'Colors: ' + product.colors.join(', ');
+            productColors.classList.add('text-gray-700');
+
+            const productSizes = document.createElement('p');
+            productSizes.textContent = 'Sizes: ' + product.sizes.join(', ');
+            productSizes.classList.add('text-gray-700');
+
+            const addToCartButton = document.createElement('button');
+            addToCartButton.textContent = 'Add to Cart';
+            addToCartButton.classList.add('mt-4', 'bg-black', 'text-white', 'py-2', 'px-4', 'w-full', 'hover:bg-white', 'hover:text-black', 'border-2', 'border-black');
+
+            productCard.appendChild(productImage);
+            productCard.appendChild(productName);
+            productCard.appendChild(productType);
+            productCard.appendChild(productPrice);
+            productCard.appendChild(productDescription);
+            productCard.appendChild(productColors);
+            productCard.appendChild(productSizes);
+            productCard.appendChild(addToCartButton);
+
+            productListContainer.appendChild(productCard);
+        });
+
+        const searchButton = document.getElementById('searchButton');
+        const searchBar = document.getElementById('searchBar');
+
+        searchButton.addEventListener('click', () => {
+            searchBar.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMW Image Layout</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <div class="flex flex-col h-screen w-screen">
+        <div class="flex-shrink-0 h-1/2 w-full">
+            <img src="" alt="Image 1" id="1" class="object-cover h-full w-full">
+        </div>
+        <hr class="border-white m-0">
+        <div class="flex h-2/3 w-full relative">
+            <div class="flex-grow-0 flex-shrink-0 w-1/2 h-full">
+                <img src="" alt="Image 4" id="4" class="object-cover h-full w-full">
+            </div>
+            <div class="border-l border-white absolute left-1/2 top-0 h-full"></div>
+            <div class="flex-grow-0 flex-shrink-0 w-1/2 h-full">
+                <img src="" alt="Image 5" id="5" class="object-cover h-full w-full">
+            </div>
+        </div>
+    </div>
+    <script>
+
+const $nickbmw = {
+            images: [
+                { id: "1", name: "bmw-sky", url: "https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/freude/sky/sky-00-teaser-hd.jpg", size: 1280 },
+                { id: "2", name: "bmw-artcar", url: "https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/digital-journey/artcar20/ac20-00-teaser-square.jpg", size: 1024 },
+                { id: "3", name: "bmw-cannes", url: "https://www.bmw.com/content/dam/bmw/marketBMWCOM/bmw_com/categories/freude/cannes24/cannes24-00-teaser-square.jpg", size: 1024 },
+                { id: "4", name: "bmw-wrap", url: "https://www.gtspiritmedia.com/gtspirit/uploads/2016/03/BMW-i8-1.jpg", size: 1024 },
+                { id: "5", name: "bmw-matte", url: "https://i.pinimg.com/736x/00/4f/71/004f71b00ab30d13b9d035be52b749ff.jpg", size: 1024 },
+                { id: "6", name: "mclaren-1", url: "https://i.pinimg.com/736x/d6/8a/a5/d68aa5558cd2864fe848162ec4080e9e.jpg", size: 1280 },
+                { id: "7", name: "mclaren-2", url: "https://cdn-fastly.autoguide.com/media/2023/06/07/12419992/mclaren-exclusive-custom-options-for-mp4-12c-previewed-at-pebble-beach.jpg?size=720x845&nocrop=1", size: 1280 },
+                { id: "8", name: "mclaren-3", url: "https://images.carid.com/inspiration/mclaren/p1/1/1.jpg", size: 1280 },
+                { id: "9", name: "mclaren-4", url: "https://mclaren.scene7.com/is/image/mclaren/765LT%20Strata%20Theme%20by%20MSO_Front34_Large:crop-16x9?wid=1600&hei=900", size: 1280 },
+                { id: "10", name: "mclaren-5", url: "https://mclaren.scene7.com/is/image/mclaren/MSO_720S%20Spider%20by%20MSO_Front_Tight_Medium-4:crop-16x9?wid=1600&hei=900", size: 1280 },
+                { id: "11", name: "mclaren-6", url: "https://mclaren.scene7.com/is/image/mclaren/Senna-tile--21200x1200:crop-4x3?wid=1920&hei=1440", size: 1280 }
+            ]
+        };
+
+        const images = [
+            { id: "1", url: "https://mclaren.scene7.com/is/image/mclaren/MSO_720S%20Spider%20by%20MSO_Front_Tight_Medium-4:crop-16x9?wid=1600&hei=900" },
+            { id: "4", url: "https://www.gtspiritmedia.com/gtspirit/uploads/2016/03/BMW-i8-1.jpg" },
+            { id: "5", url: "https://i.pinimg.com/736x/00/4f/71/004f71b00ab30d13b9d035be52b749ff.jpg" }
+        ];
+
+        document.querySelectorAll('img').forEach(img => {
+            const image = images.find(image => image.id === img.id);
+            if (image) {
+                img.src = image.url;
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
