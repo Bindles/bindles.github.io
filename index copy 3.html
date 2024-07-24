@@ -3,73 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Urban Royalty - T-Shirt Shop</title>
+    <title>Portfolio</title>
+    <!-- Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.css" rel="stylesheet">
+    <!-- Flowbite CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.7.0/dist/flowbite.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for horizontal scrolling */
+        .skills-container {
+            display: flex;
+            overflow-x: auto;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            padding: 20px;
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch; /* Enables momentum-based scrolling on iOS devices */
+        }
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        .skill-item {
+            display: inline-block;
+            margin-right: 20px;
+            text-align: center;
+        }
 
-
- <style>
-
-</style>   
-   
+        .skill-item img {
+            width: 64px;
+            height: 64px;
+        }
+    </style>
 </head>
-<body class="bg-white text-black">
-
-    <!-- Header -->
-    <header class="bg-white border-b-2 border-black navbar">
-        <div class="container mx-auto flex justify-between items-center h-11 p-2">
-            <div class="flex items-center">
-                <!-- <img src="Logo01.png" alt="Urban Royalty Logo" class="h-10"> -->
-                <nav class="ml-6 space-x-4">
-                    <a href="#" class="text-black hover:underline">Home</a>
-                    <a href="shop.html" class="text-black hover:underline">Shop</a>
-                    <a href="#" class="text-black hover:underline">About</a>
-                </nav>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-gray-800 text-white">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold">Portfolio</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden focus:outline-none" id="mobile-menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+            <!-- Mobile Menu -->
+            <div class="hidden md:flex space-x-4" id="mobile-menu">
+                <a href="#about-me" class="hover:text-gray-300">About Me</a>
+                <a href="#projects" class="hover:text-gray-300">Projects</a>
+                <a href="#skills" class="hover:text-gray-300">Skills</a>
+                <a href="#github" class="hover:text-gray-300">GitHub</a>
+                <a href="#contact" class="hover:text-gray-300">Contact</a>
             </div>
-            <div class="flex items-center space-x-2 relative">
-                <button id="searchButton" class="text-black">
-                    <i class="fas fa-search h-6 w-6"></i>
-                </button>
-                <div id="searchBar" class="hidden flex items-center">
-                    <input type="text" placeholder="Search..." class="border border-gray-400 px-2 py-1 rounded-md w-32 mr-1">
-                    <button type="submit" class="text-black bg-black py-1 px-1 hover:bg-blue-500 hover:text-black border-2 border-black">Submit</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- About Me Section -->
+        <section id="about-me" class="mb-8 flex justify-center items-center">
+            <!-- Image -->
+            <img src="https://avatars.githubusercontent.com/u/9699261?v=4" alt="Profile Image" class="w-64 h-64 rounded-full mr-8">
+
+            <!-- Text with Typing Effect -->
+            <div class="text-center text-3xl text-black">
+                <p>Hello, I'm <b><span class="text-blue-400" id="name">Nicholas Turner</span></b></p>
+                <p>I'm a <b><span class="text-blue-400" id="profession"></span></b></p>
+            </div>
+        </section>
+
+        <!-- Description -->
+        <div class="text-center text-lg text-gray-800 mb-8 px-8">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum arcu sit amet ultricies fringilla.</p>
+            <p>Nullam id mi a mauris pulvinar varius ac eget eros. Integer tempus, ante nec volutpat tempor, est purus posuere lorem, ac ullamcorper eros arcu ac ante.</p>
+        </div>
+
+        <!-- Hire Me Button -->
+        <div class="flex justify-center mb-8">
+            <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline">Hire Me</button>
+        </div>
+
+
+
+
+
+
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-8">
+            <h2 class="text-4xl font-bold mb-6 text-center">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" alt="CSS" class="w-12 h-12">
+                        <h3 class="text-xl font-bold ml-4">CSS</h3>
+                    </div>
+                    <p class="text-gray-400">Experienced in crafting responsive and aesthetically pleasing layouts with CSS3. Proficient in using Flexbox, Grid, and CSS animations.</p>
                 </div>
-                <button id="cartButton" class="text-black">
-                    <i class="fas fa-shopping-cart h-6 w-6"></i>
-                </button>
-                <button id="loginButton" class="text-black">
-                    <i class="fas fa-user h-6 w-6"></i>
-                </button>
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original-wordmark.svg" alt="Ruby" class="w-12 h-12">
+                        <h3 class="text-xl font-bold ml-4">Ruby</h3>
+                    </div>
+                    <p class="text-gray-400">Skilled in Ruby programming with a strong understanding of object-oriented principles. Experienced with Ruby on Rails for backend development.</p>
+                </div>
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript" class="w-12 h-12">
+                        <h3 class="text-xl font-bold ml-4">JavaScript</h3>
+                    </div>
+                    <p class="text-gray-400">Proficient in modern JavaScript (ES6+) with expertise in building dynamic and interactive web applications. Familiar with frameworks like React and Vue.js.</p>
+                </div>
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" alt="React" class="w-12 h-12">
+                        <h3 class="text-xl font-bold ml-4">React</h3>
+                    </div>
+                    <p class="text-gray-400">Experienced in building scalable and performant web applications using React. Knowledgeable in hooks, context API, and state management libraries like Redux.</p>
+                </div>
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg" alt="Rust" class="w-12 h-12">
+                        <h3 class="text-xl font-bold ml-4">Rust</h3>
+                    </div>
+                    <p class="text-gray-400">Skilled in Rust programming with a focus on system-level programming, performance, and safety. Experience in developing CLI tools and web services using Rust.</p>
+                </div>
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg" alt="Python" class="w-12 h-12">
+                        <h3 class="text-xl font-bold ml-4">Python</h3>
+                    </div>
+                    <p class="text-gray-400">Proficient in Python with experience in data analysis, web development using Django and Flask, and automation scripts. Knowledgeable in libraries like Pandas and NumPy.</p>
+                </div>
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP" class="w-12 h-12">
+                        <h3 class="text-xl font-bold ml-4">PHP</h3>
+                    </div>
+                    <p class="text-gray-400">Experienced in backend development using PHP. Skilled in creating dynamic websites and web applications. Familiar with frameworks like Laravel and CodeIgniter.</p>
+                </div>
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="Tailwind CSS" class="w-12 h-12">
+                        <h3 class="text-xl font-bold ml-4">Tailwind CSS</h3>
+                    </div>
+                    <p class="text-gray-400">Proficient in Tailwind CSS, a utility-first CSS framework. Experienced in building modern and responsive web designs with Tailwind's utility classes.</p>
+                </div>
+                <div class="bg-gray-800 text-white p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" class="w-12 h-12">
+                        <h3 class="text-xl font-bold ml-4">MySQL</h3>
+                    </div>
+                    <p class="text-gray-400">Experienced in relational database management with MySQL. Skilled in writing complex SQL queries, designing database schemas, and optimizing performance.</p>
+                </div>
             </div>
-        </div>
-    </header>
-    
-    
-    
-    
-    
-    
-    
-    
+        </section>
 
-    <!-- Hero Section -->
-    <section class="bg-gray-100 py-16">
-        <div class="container mx-auto text-center">
-            <h1 class="text-4xl font-bold">Welcome to Urban Royalty</h1>
-            <p class="mt-4 text-lg">Your source for stylish urban T-shirts</p>
-            <button class="mt-6 bg-black text-white py-2 px-4 hover:bg-white hover:text-black border-2 border-black" onClick="location.href='shop.html'">Shop Now</button>
-        </div>
-    </section>
 
+
+        <!-- Skills Section -->
+        <section id="skills" class="mb-8">
+
+            <div class="skills-container">
+                <script>
+                    const skills = [
+                        { name: 'CSS', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg' },
+                        { name: 'Ruby', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ruby/ruby-original-wordmark.svg' },
+                        { name: 'JavaScript', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg' },
+                        { name: 'React', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg' },
+                        { name: 'Rust', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg' },
+                        { name: 'Python', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original-wordmark.svg' },
+                        { name: 'PHP', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg' },
+                        { name: 'Laravel', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original-wordmark.svg' },
+                        { name: 'MySQL', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg' },
+                        { name: 'PostgreSQL', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg' },
+                        { name: 'Linux', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg' },
+                        { name: 'PowerShell', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/powershell/powershell-original.svg' },
+                        { name: 'Bash', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg' },
+                        { name: 'Unity', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unity/unity-plain-wordmark.svg' },
+                        { name: 'Postman', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original-wordmark.svg' },
+                        { name: 'HTML', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg' },
+                        { name: 'Svelte', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg' },
+                        { name: 'npm', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg' },
+                        { name: 'Django', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain-wordmark.svg' },
+                        { name: 'Phoenix', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/phoenix/phoenix-original.svg' },
+                        { name: 'Crystal', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/crystal/crystal-original.svg' },
+                        { name: 'Git', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original-wordmark.svg' },
+                        { name: 'GitHub', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original-wordmark.svg' },
+                        { name: 'Rspec', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rspec/rspec-original-wordmark.svg' },
+                        { name: 'Vite', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vite/vite-original-wordmark.svg' },
+                        { name: 'WordPress', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg' },
+                        { name: 'WooCommerce', url: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/woocommerce/woocommerce-original-wordmark.svg' }
+                    ];
+
+                    // Calculate the number of skills to show based on screen size
+                    const numSkillsToShow = Math.floor(window.innerWidth / 150); // Adjust 150 according to your preference
+
+                    // Clone skills array to create a looping effect
+                    const allSkills = [...skills, ...skills];
+
+                    // Create skill elements and append them to the container
+                    allSkills.forEach(skill => {
+                        const skillDiv = document.createElement('div');
+                        skillDiv.classList.add('skill-item');
+
+                        const skillImg = document.createElement('img');
+                        skillImg.src = skill.url;
+                        skillImg.alt = skill.name;
+
+                        const skillName = document.createElement('span');
+                        skillName.textContent = skill.name;
+                        skillName.classList.add('text-center', 'text-gray-800', 'text-2xl', 'mt-2');
+
+                        skillDiv.appendChild(skillImg);
+                        skillDiv.appendChild(skillName);
+
+                        document.querySelector('.skills-container').appendChild(skillDiv);
+                    });
+
+                    // Function to scroll the skills container
+                    function scrollSkillsContainer() {
+                        const container = document.querySelector('.skills-container');
+                        container.scrollBy({ left: 1, behavior: 'smooth' });
+                    }
+
+                    // Start the scroll effect
+                    setInterval(scrollSkillsContainer, 16); // Adjust the interval and scroll amount as needed
+                </script>
+            </div>
+        </section>
+
+        <!-- GitHub Section -->
+        <section id="github" class="mb-8">
+            <h2 class="text-4xl font-bold mb-6 text-center">GitHub</h2>
+            <p class="text-gray-700 text-center">Placeholder text for your GitHub section...</p>
+            <h1>My LeetCode Stats</h1>
+    <img src="https://leetcard.jacoblin.cool/bindles?ext=contest" alt="LeetCode Stats" width="20px">
+        </section>
+
+
+
+      
     <!-- Product Listing -->
     <section class="py-16">
         <div class="container mx-auto">
             <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
             <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
         </div>
-    </section>
+    </section>        
+
+
+        
+
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-8">
+            <h2 class="text-4xl font-bold mb-6 text-center">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4" id="projects-container">
+                <!-- Placeholder for projects -->
+            </div>
+        </section>
+
+
+        
+
+<!-- Contact Section -->
+<section id="contact" class="bg-gray-800 text-white py-8">
+    <h2 class="text-4xl font-bold mb-6 text-center">Contact</h2>
+    <div class="max-w-xl mx-auto rounded-lg bg-gray-800 p-8">
+        <form id="contact-form" class="space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-bold text-gray-400">Name</label>
+                <input type="text" id="name" name="name" class="w-full px-4 py-2 bg-gray-700 rounded-lg text-gray-200 focus:outline-none focus:bg-gray-600" placeholder="Your name">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-bold text-gray-400">Email</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-2 bg-gray-700 rounded-lg text-gray-200 focus:outline-none focus:bg-gray-600" placeholder="Your email">
+            </div>
+            <div>
+                <label for="subject" class="block text-sm font-bold text-gray-400">Subject</label>
+                <input type="text" id="subject" name="subject" class="w-full px-4 py-2 bg-gray-700 rounded-lg text-gray-200 focus:outline-none focus:bg-gray-600" placeholder="Subject">
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-bold text-gray-400">Message</label>
+                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 bg-gray-700 rounded-lg text-gray-200 focus:outline-none focus:bg-gray-600" placeholder="Your message"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-blue-400 text-white font-bold py-2 px-4 rounded-lg focus:outline-none hover:bg-blue-500 transition-colors duration-300">Send Message</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+
+
+
+  
+      <!-- About Me Cards Section -->
+<!-- About Me Section -->
+<section id="about-me" class="mb-12 bg-gray-50 py-12 px-6 lg:px-24">
+    <div class="container mx-auto">
+      <div class="flex flex-col lg:flex-row items-center lg:items-start mb-12">
+        <div class="lg:w-1/3 mb-6 lg:mb-0 lg:mr-8">
+          <img src="https://scontent-bos5-1.xx.fbcdn.net/v/t31.18172-8/1048715_10151668040469911_924765009_o.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=8lJkalS9u1oQ7kNvgF1-G0X&_nc_ht=scontent-bos5-1.xx&oh=00_AYCL169nI-AjeEMyZT2C-nHHx1Y0L1SMkhnDNoxqIO1YNw&oe=6685834F" alt="Your Photo" class="rounded-lg shadow-lg">
+        </div>
+        <div class="lg:w-2/3">
+          <h2 class="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
+          <p class="text-md text-gray-700 mb-4">
+            Hello! I'm a seasoned programmer with 25 years of coding experience. My journey began at the age of 12 when I started making games with RPG Maker 95 and RPG Maker 2k. This early passion for game development led me to learn HTML, which subsequently opened the doors to JavaScript. I quickly found myself diving into web development, creating games with a JavaScript engine called SphereJS, and expanding my skills in HTML, JS, and CSS through online learning.
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col lg:flex-row items-center lg:items-start mb-12">
+        <div class="lg:w-1/3 mb-6 lg:mb-0 lg:mr-8">
+          <img src="https://via.placeholder.com/400" alt="Project Image" class="rounded-lg shadow-lg">
+        </div>
+        <div class="lg:w-2/3">
+          <h3 class="text-3xl font-semibold text-gray-900 mb-4">Memorable Projects</h3>
+          <p class="text-md text-gray-700 mb-4">
+            One of my most memorable projects was creating a clothing shop for a personal client. The project featured a Rails backend with models for shirts, logos, and colors, as well as customizable T-shirts and clothing options. Despite it being outside my usual focus, I embraced the challenge and significantly improved my front-end skills, learning a lot about JavaScript for web design. This experience, along with other projects using Tailwind CSS, helped me discover a newfound passion for front-end development.
+          </p>
+        </div>
+      </div>
+  
+      <!-- About Me Cards Section -->
+      <h2 class="text-4xl font-bold mb-6 text-center">More About Me</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-800 text-white p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Favorite Technologies</h3>
+          <p class="text-gray-400 text-sm">I have a deep love for Ruby, Rails, and JavaScript. These technologies have been central to my development work, allowing me to build robust and dynamic web applications.</p>
+        </div>
+        <div class="bg-gray-800 text-white p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Passion for Problem Solving</h3>
+          <p class="text-gray-400 text-sm">At the core of my work is a love for solving problems. I find immense joy and satisfaction in tackling challenges and finding solutions. My natural curiosity drives me to dive deep into issues and come up with innovative fixes, making every problem-solving journey fun and rewarding.</p>
+        </div>
+        <div class="bg-gray-800 text-white p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Areas of Expertise</h3>
+          <p class="text-gray-400 text-sm">While I have always considered myself a backend specialist, with extensive experience in CRUD operations, relational databases, and complex models, I have recently developed a strong interest in front-end design. This dual passion allows me to create comprehensive, full-stack solutions, ensuring seamless integration between the front and back end of applications.</p>
+        </div>
+        <div class="bg-gray-800 text-white p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Lifelong Learning</h3>
+          <p class="text-gray-400 text-sm">I am a lifelong learner, dedicated to expanding my knowledge and skills. Over the years, I have spent thousands of hours learning various topics, constantly pushing myself to stay at the forefront of technological advancements.</p>
+        </div>
+        <div class="bg-gray-800 text-white p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Career Goals</h3>
+          <p class="text-gray-400 text-sm">My ultimate goal is to become one of the top programmers in the world. To achieve this, I seek a role where I can continuously learn and grow. I am eager to find a job that challenges me and provides opportunities to enhance my expertise while contributing to meaningful projects.</p>
+        </div>
+        <div class="bg-gray-800 text-white p-6 rounded-lg">
+          <h3 class="text-xl font-bold mb-4">Staying Updated</h3>
+          <p class="text-gray-400 text-sm">To stay updated with the latest trends and technologies in web development, I regularly follow industry blogs, participate in online forums, and attend webinars and conferences. I also enjoy experimenting with new tools and frameworks, incorporating them into my projects to stay ahead of the curve.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+
+  
+
+
+
 
     <!-- Footer -->
     <footer class="bg-white border-t-2 border-black py-4">
@@ -89,8 +384,191 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@1.5.0/dist/flowbite.min.js"></script>
+
+
+    <!-- Footer 
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto text-center">
+            <p class="text-xl">© 2024 Bindles Portfolio</p>
+        </div>
+    </footer>
+-->
+
+        <!-- <footer class="footer"> -->
+        <!-- <div class="social"> -->
+            <!-- <a href=""><i class="fab fa-linkedin-in"></i></a> -->
+            <!-- <a href=""><i class="fab fa-facebook-f"></i></a> -->
+            <!-- <a href=""><i class="fab fa-twitter"></i></a> -->
+            <!-- <a href=""><i class="fab fa-instagram"></i></a> -->
+            <!-- <a href=""><i class="fa-brands fa-square-instagram"></i></a> -->
+            <!-- <a href=""><i class="fab fa-github"></i></a> -->
+        <!-- </div> -->
+        <!-- <div class="social"> -->
+            <!-- <a href="#"><i class="fa-brands fa-linkedin"></i></a> -->
+            <!-- <a href="#"><i class="fa-brands fa-square-instagram"></i></a> -->
+            <!-- <a href="#"><i class="fa-brands fa-x-twitter"></i></a> -->
+            <!-- <a href="#"><i class="fa-brands fa-facebook"></i></a> -->
+        <!-- </div> -->
+        <!-- <ul class="list"> -->
+            <!-- <li><a href="#home">FAW</a></li> -->
+            <!-- <li><a href="#about">Service</a></li> -->
+            <!-- <li><a href="#skills">About</a></li> -->
+            <!-- <li><a href="#contact">Contact</a></li> -->
+            <!-- <li><a href="#portfolio">Privacy Policies</a></li> -->
+        <!-- </ul> -->
+        <!-- <p class="copyright"> -->
+            <!-- Bindles | All Rights Reserved. -->
+        <!-- </p> -->
+    <!-- </footer> -->
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+
     <script>
+        // JavaScript for Typing Effect
+        const professions = ['Web Developer', 'Programmer', 'Web Designer', 'Ruby Expert'];
+        let professionIndex = 0;
+        let typingTimer;
+
+        function startTypingEffect() {
+            const professionElement = document.getElementById('profession');
+            const profession = professions[professionIndex];
+            const professionLength = profession.length;
+
+            let currentIndex = 0;
+            typingTimer = setInterval(() => {
+                if (currentIndex <= professionLength) {
+                    const partialProfession = profession.substring(0, currentIndex);
+                    professionElement.innerHTML = partialProfession;
+                    currentIndex++;
+                } else {
+                    clearInterval(typingTimer);
+                    setTimeout(() => {
+                        eraseTypingEffect();
+                    }, 1000);
+                }
+            }, 100);
+        }
+
+        function eraseTypingEffect() {
+            const professionElement = document.getElementById('profession');
+            const profession = professions[professionIndex];
+            const professionLength = profession.length;
+
+            let currentIndex = professionLength;
+            typingTimer = setInterval(() => {
+                if (currentIndex >= 0) {
+                    const partialProfession = profession.substring(0, currentIndex);
+                    professionElement.innerHTML = partialProfession;
+                    currentIndex--;
+                } else {
+                    clearInterval(typingTimer);
+                    professionIndex = (professionIndex + 1) % professions.length;
+                    setTimeout(() => {
+                        startTypingEffect();
+                    }, 500);
+                }
+            }, 100);
+        }
+
+        // Start typing effect
+        startTypingEffect();
+
+        // JavaScript for Projects Section
+        const projects = [
+            {
+                name: 'Project One',
+                img: 'https://urlbox.com/content/website-thumbnail-apis/image4.png',
+                desc: 'A brief description of Project One.',
+                url: '#',
+                code_url: '#'
+            },
+            {
+                name: 'Project Two',
+                img: 'https://urlbox.com/content/website-thumbnail-apis/image4.png',
+                desc: 'A brief description of Project Two.',
+                url: '#',
+                code_url: '#'
+            },
+            {
+                name: 'Project Three',
+                img: 'https://urlbox.com/content/website-thumbnail-apis/image4.png',
+                desc: 'A brief description of Project Three.',
+                url: '#',
+                code_url: '#'
+            },
+            {
+                name: 'Project Four',
+                img: 'https://urlbox.com/content/website-thumbnail-apis/image4.png',
+                desc: 'A brief description of Project Four.',
+                url: '#',
+                code_url: '#'
+            }
+        ];
+
+        const projectsContainer = document.getElementById('projects-container');
+
+        projects.forEach(project => {
+            const projectCard = document.createElement('div');
+            projectCard.classList.add('bg-gray-800', 'rounded-lg', 'shadow-lg', 'p-4', 'transition', 'transform', 'hover:scale-105', 'hover:shadow-xl');
+
+            const projectImg = document.createElement('img');
+            projectImg.src = project.img;
+            projectImg.alt = project.name;
+            projectImg.classList.add('w-full', 'h-40', 'object-cover', 'rounded-t-lg');
+
+            const projectName = document.createElement('h3');
+            projectName.textContent = project.name;
+            projectName.classList.add('text-xl', 'font-bold', 'mt-2');
+
+            const projectDesc = document.createElement('p');
+            projectDesc.textContent = project.desc;
+            projectDesc.classList.add('text-gray-700', 'mt-2');
+
+            const projectLinks = document.createElement('div');
+            projectLinks.classList.add('mt-4', 'flex', 'justify-between');
+
+            const projectUrl = document.createElement('a');
+            projectUrl.href = project.url;
+            projectUrl.textContent = 'View Project';
+            projectUrl.classList.add('text-blue-500', 'hover:text-blue-700', 'font-semibold');
+
+            const projectCodeUrl = document.createElement('a');
+            projectCodeUrl.href = project.code_url;
+            projectCodeUrl.textContent = 'View Code';
+            projectCodeUrl.classList.add('text-blue-500', 'hover:text-blue-700', 'font-semibold');
+
+            projectLinks.appendChild(projectUrl);
+            projectLinks.appendChild(projectCodeUrl);
+
+            projectCard.appendChild(projectImg);
+            projectCard.appendChild(projectName);
+            projectCard.appendChild(projectDesc);
+            projectCard.appendChild(projectLinks);
+
+            projectsContainer.appendChild(projectCard);
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const serviceID = 'service_07fjd5k';
+            const templateID = 'template_pavlznx';
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(function(response) {
+                    alert('Message sent successfully!');
+                }, function(error) {
+                    alert('Failed to send the message. Please try again later.');
+                });
+
+            event.target.reset();
+        });
+
+
+
+
+
         const products = [
             {
                 name: "Product Name",
@@ -186,4 +664,3 @@
     </script>
 </body>
 </html>
-
