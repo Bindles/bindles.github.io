@@ -49,12 +49,11 @@
             </button>
             <!-- Mobile Menu -->
             <div class="hidden md:flex space-x-4" id="mobile-menu">
-
-                <a href="#skills" class="hover:text-gray-300">Skills</a> 
-                <a href="#leetcode" class="hover:text-gray-300">Leetcode</a>                               
-                <a href="#products" class="hover:text-gray-300">Projects</a>
-                <a href="#aboutme" class="hover:text-gray-300">About Me</a>                
-
+                <a href="#about-me" class="hover:text-gray-300">About Me</a>
+                <a href="#projects" class="hover:text-gray-300">Projects</a>
+                <a href="#skills" class="hover:text-gray-300">Skills</a>
+                <a href="#github" class="hover:text-gray-300">GitHub</a>
+                <a href="#contact" class="hover:text-gray-300">Contact</a>
             </div>
         </div>
     </nav>
@@ -261,7 +260,7 @@
 
       
     <!-- Product Listing -->
-    <section id="products" class="py-16">
+    <section class="py-16">
         <div class="container mx-auto">
             <h2 class="text-3xl font-bold text-center mb-8">Our Products</h2>
             <div id="product-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
@@ -316,7 +315,7 @@
 
 <!-- About Me Cards Section -->
 <!-- About Me Section -->
-<section id="aboutme" class="mb-12 bg-gray-50 py-12 px-6 lg:px-24">
+<section id="about-me" class="mb-12 bg-gray-50 py-12 px-6 lg:px-24">
     <div class="container mx-auto">
       <div class="flex flex-col lg:flex-row items-center lg:items-start mb-12">
         <div class="lg:w-1/3 mb-6 lg:mb-0 lg:mr-8">
@@ -488,33 +487,33 @@
         // JavaScript for Projects Section
         const projects = [
             {
-                name: 'x for Terminal',
-                img: 'img/proj-terminal-x.png',
-                desc: 'Saves time by cding you into a dir while making it or making rails new app etc, no more "cd dir" after mk command',
+                name: 'Project One',
+                img: 'https://urlbox.com/content/website-thumbnail-apis/image4.png',
+                desc: 'A brief description of Project One.',
                 url: '#',
                 code_url: '#'
             },
             {
-                name: 'x for Terminal',
-                img: 'img/proj-terminal-x.png',
-                desc: 'Saves time by cding you into a dir while making it or making rails new app etc, no more "cd dir" after mk command',
+                name: 'Project Two',
+                img: 'https://urlbox.com/content/website-thumbnail-apis/image4.png',
+                desc: 'A brief description of Project Two.',
                 url: '#',
                 code_url: '#'
             },
             {
-                name: 'x for Terminal',
-                img: 'img/proj-terminal-x.png',
-                desc: 'Saves time by cding you into a dir while making it or making rails new app etc, no more "cd dir" after mk command',
+                name: 'Project Three',
+                img: 'https://urlbox.com/content/website-thumbnail-apis/image4.png',
+                desc: 'A brief description of Project Three.',
                 url: '#',
                 code_url: '#'
             },
             {
-                name: 'x for Terminal',
-                img: 'img/proj-terminal-x.png',
-                desc: 'Saves time by cding you into a dir while making it or making rails new app etc, no more "cd dir" after mk command',
+                name: 'Project Four',
+                img: 'https://urlbox.com/content/website-thumbnail-apis/image4.png',
+                desc: 'A brief description of Project Four.',
                 url: '#',
                 code_url: '#'
-            },
+            }
         ];
 
         const projectsContainer = document.getElementById('projects-container');
@@ -530,11 +529,11 @@
 
             const projectName = document.createElement('h3');
             projectName.textContent = project.name;
-            projectName.classList.add('text-xl', 'text-white', 'font-bold', 'mt-2');
+            projectName.classList.add('text-xl', 'font-bold', 'mt-2');
 
             const projectDesc = document.createElement('p');
             projectDesc.textContent = project.desc;
-            projectDesc.classList.add('text-gray-400', 'mt-2');
+            projectDesc.classList.add('text-gray-700', 'mt-2');
 
             const projectLinks = document.createElement('div');
             projectLinks.classList.add('mt-4', 'flex', 'justify-between');
@@ -585,21 +584,18 @@ const products = [
         name: "Urban Royalty Garments",
         description: "Tshirt company",
         url: "https://urban-royalty-garments-layout.vercel.app",
-        code_url: "https://github.com/bindles//urban-royalty-garments-layout", // Example code URL
         image: "img/ws-thumb-urg-01.png"
     },
     {
         name: "Burger Shop",
         description: "Restaurant Website",
         url: "https://burger-shop-rho.vercel.app/",
-        code_url: "https://github.com/bindles/burger-shop", // Example code URL
         image: "img/ws-thumb-burger.png"
     },
     {
         name: "Pro Wraps",
         description: "Car detailing website",
         url: "https://pro-wraps.vercel.app/",
-        code_url: "https://github.com/bindles/pro-wraps", // Example code URL
         image: "img/ws-thumb-pro-wraps.png"
     }
 ];
@@ -628,20 +624,18 @@ products.forEach(product => {
     productUrl.textContent = product.url;
     productUrl.classList.add('text-blue-500', 'underline', 'mb-4', 'block');
 
-    const viewSiteButton = document.createElement('a');
-    viewSiteButton.href = product.url;
-    viewSiteButton.textContent = 'View Site';
-    viewSiteButton.classList.add('mt-4', 'bg-black', 'text-white', 'py-2', 'px-4', 'w-1/2', 'hover:bg-white', 'hover:text-black', 'border-2', 'border-black', 'block', 'text-center', 'no-underline');
+    const addToCartButton1 = document.createElement('button');
+    addToCartButton1.textContent = 'Add to Cart 1';
+    addToCartButton1.classList.add('mt-4', 'bg-black', 'text-white', 'py-2', 'px-4', 'w-1/2', 'hover:bg-white', 'hover:text-black', 'border-2', 'border-black');
 
-    const viewCodeButton = document.createElement('a');
-    viewCodeButton.href = product.code_url;
-    viewCodeButton.textContent = 'View Code';
-    viewCodeButton.classList.add('mt-4', 'bg-black', 'text-white', 'py-2', 'px-4', 'w-1/2', 'hover:bg-white', 'hover:text-black', 'border-2', 'border-black', 'block', 'text-center', 'no-underline');
+    const addToCartButton2 = document.createElement('button');
+    addToCartButton2.textContent = 'Add to Cart 2';
+    addToCartButton2.classList.add('mt-4', 'bg-black', 'text-white', 'py-2', 'px-4', 'w-1/2', 'hover:bg-white', 'hover:text-black', 'border-2', 'border-black');
 
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('flex', 'space-x-2');
-    buttonContainer.appendChild(viewSiteButton);
-    buttonContainer.appendChild(viewCodeButton);
+    buttonContainer.appendChild(addToCartButton1);
+    buttonContainer.appendChild(addToCartButton2);
 
     productCard.appendChild(productImage);
     productCard.appendChild(productName);
@@ -651,7 +645,6 @@ products.forEach(product => {
 
     productListContainer.appendChild(productCard);
 });
-
 
 
 
