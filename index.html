@@ -75,8 +75,7 @@
 
         <!-- Description -->
         <div class="text-center text-lg text-gray-800 mb-8 px-8">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum arcu sit amet ultricies fringilla.</p>
-            <p>Nullam id mi a mauris pulvinar varius ac eget eros. Integer tempus, ante nec volutpat tempor, est purus posuere lorem, ac ullamcorper eros arcu ac ante.</p>
+            <p>I am a dedicated programmer with a strong focus on C++ and Ruby, passionate about solving complex problems on LeetCode. With extensive experience in Ruby on Rails, I have developed robust backend systems and seamless web applications. My capabilities extend beyond web development, delving into advanced software development and programming. Whether it's architecting scalable systems, optimizing algorithms for efficiency, or tackling complex programming challenges, I thrive on pushing the boundaries of software engineering. I also excel in creating responsive and dynamic designs using HTML, CSS, and Tailwind CSS. I am committed to continuous learning and innovative solutions, striving to stay at the forefront of technological advancements.</p>
         </div>
 
         <!-- Hire Me Button -->
@@ -257,8 +256,6 @@
 </section>
 -->
 
-
-
       
     <!-- Product Listing -->
     <section id="products" class="py-16">
@@ -271,7 +268,6 @@
 
         
 
-
         <!-- Projects Section -->
         <section id="projects" class="mb-8">
             <h2 class="text-4xl font-bold mb-6 text-center">Projects</h2>
@@ -283,7 +279,7 @@
 
         
 
-<!-- Contact Section -->
+<!-- Contact Section 
 <section id="contact" class="bg-gray-800 text-white py-8">
     <h2 class="text-4xl font-bold mb-6 text-center">Contact</h2>
     <div class="max-w-xl mx-auto rounded-lg bg-gray-800 p-8">
@@ -309,7 +305,7 @@
     </div>
 </section>
 
-
+-->
 
 
 
@@ -391,7 +387,7 @@
                     <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c-3.204 0-5.845 2.641-5.845 5.845 0 4.501 5.845 9.984 5.845 9.984s5.845-5.483 5.845-9.984c0-3.204-2.641-5.845-5.845-5.845zm0 9.668c-2.115 0-3.823-1.708-3.823-3.823s1.708-3.823 3.823-3.823 3.823 1.708 3.823 3.823-1.708 3.823-3.823 3.823zm6.742-10.006c0 1.081-.876 1.957-1.957 1.957s-1.957-.876-1.957-1.957.876-1.957 1.957-1.957 1.957.876 1.957 1.957z"/></svg>
                 </a>
             </div>
-            <p class="text-gray-700">&copy; 2024 Urban Royalty. All rights reserved.</p>
+            <p class="text-gray-700">&copy; 2024 Nicholas Turner. All rights reserved.</p>
         </div>
     </footer>
 
@@ -485,96 +481,99 @@
         // Start typing effect
         startTypingEffect();
 
-        // JavaScript for Projects Section
-        const projects = [
-            {
-                name: 'x for Terminal',
-                img: 'img/proj-terminal-x.png',
-                desc: 'Saves time by cding you into a dir while making it or making rails new app etc, no more "cd dir" after mk command',
-                url: '#',
-                code_url: '#'
-            },
-            {
-                name: 'x for Terminal',
-                img: 'img/proj-terminal-x.png',
-                desc: 'Saves time by cding you into a dir while making it or making rails new app etc, no more "cd dir" after mk command',
-                url: '#',
-                code_url: '#'
-            },
-            {
-                name: 'x for Terminal',
-                img: 'img/proj-terminal-x.png',
-                desc: 'Saves time by cding you into a dir while making it or making rails new app etc, no more "cd dir" after mk command',
-                url: '#',
-                code_url: '#'
-            },
-            {
-                name: 'x for Terminal',
-                img: 'img/proj-terminal-x.png',
-                desc: 'Saves time by cding you into a dir while making it or making rails new app etc, no more "cd dir" after mk command',
-                url: '#',
-                code_url: '#'
-            },
-        ];
+        //PROJECTS SECTION
+// JavaScript for Projects Section
+const projects = [
+    {
+        name: 'x for Terminal',
+        img: 'img/bash-x-02-folderguy.jpg',
+        desc: 'Saves time by cding you into a dir while making it or making rails new app etc, no more "cd dir" after mk command',
+        url: '#',
+        code_url: 'https://github.com/Bindles/bash-script-x'
+    },
+    {
+        name: 'PG Create-DB',
+        img: 'img/bash-postgres.webp',
+        desc: 'Make a postgresql database on the fly with one esay command. credentials will appear in terminal and clipboard + auto appended to rails applications.',
+        url: '#',
+        code_url: 'https://github.com/Bindles/bash-script-pg-create-db'
+    },
+    {
+        name: 'Book Search',
+        img: 'img/bash-booksearch.jpg',
+        desc: 'Easily find any book from your terminal with tons of options including grep search.',
+        url: '#',
+        code_url: 'https://github.com/Bindles/bash-script-booksearchx'
+    },
+    {
+        name: 'xTouch',
+        img: 'img/bash-ctouch.jpg',
+        desc: 'Enhanced touch command allows you to touch multiple files at once in one line.',
+        url: '#',
+        code_url: 'https://github.com/Bindles/bash-script-xtouch'
+    },
+];
 
-        const projectsContainer = document.getElementById('projects-container');
+const projectsContainer = document.getElementById('projects-container');
 
-        projects.forEach(project => {
-            const projectCard = document.createElement('div');
-            projectCard.classList.add('bg-gray-800', 'rounded-lg', 'shadow-lg', 'p-4', 'transition', 'transform', 'hover:scale-105', 'hover:shadow-xl');
+projects.forEach(project => {
+    const projectCard = document.createElement('div');
+    projectCard.classList.add('bg-gray-800', 'rounded-lg', 'shadow-lg', 'p-4', 'transition', 'transform', 'hover:scale-105', 'hover:shadow-xl', 'flex', 'flex-col', 'justify-between', 'h-full');
 
-            const projectImg = document.createElement('img');
-            projectImg.src = project.img;
-            projectImg.alt = project.name;
-            projectImg.classList.add('w-full', 'h-40', 'object-cover', 'rounded-t-lg');
+    const projectImg = document.createElement('img');
+    projectImg.src = project.img;
+    projectImg.alt = project.name;
+    projectImg.classList.add('w-full', 'h-40', 'object-cover', 'rounded-t-lg');
 
-            const projectName = document.createElement('h3');
-            projectName.textContent = project.name;
-            projectName.classList.add('text-xl', 'text-white', 'font-bold', 'mt-2');
+    const projectName = document.createElement('h3');
+    projectName.textContent = project.name;
+    projectName.classList.add('text-xl', 'text-white', 'font-bold', 'mt-2');
 
-            const projectDesc = document.createElement('p');
-            projectDesc.textContent = project.desc;
-            projectDesc.classList.add('text-gray-400', 'mt-2');
+    const projectDesc = document.createElement('p');
+    projectDesc.textContent = project.desc;
+    projectDesc.classList.add('text-sm', 'text-gray-300', 'mt-2');
 
-            const projectLinks = document.createElement('div');
-            projectLinks.classList.add('mt-4', 'flex', 'justify-between');
+    const projectLinks = document.createElement('div');
+    projectLinks.classList.add('mt-4', 'flex', 'justify-between', 'mt-auto');
 
-            const projectUrl = document.createElement('a');
-            projectUrl.href = project.url;
-            projectUrl.textContent = 'View Project';
-            projectUrl.classList.add('text-blue-500', 'hover:text-blue-700', 'font-semibold');
+    const projectUrl = document.createElement('a');
+    projectUrl.href = project.code_url; // => url
+    projectUrl.textContent = 'View Project';
+    projectUrl.classList.add('text-blue-500', 'hover:text-blue-700', 'font-semibold');
+    projectUrl.target = '_blank';  // Opens in new tab
 
-            const projectCodeUrl = document.createElement('a');
-            projectCodeUrl.href = project.code_url;
-            projectCodeUrl.textContent = 'View Code';
-            projectCodeUrl.classList.add('text-blue-500', 'hover:text-blue-700', 'font-semibold');
+    const projectCodeUrl = document.createElement('a');
+    projectCodeUrl.href = project.code_url;
+    projectCodeUrl.textContent = 'View Code';
+    projectCodeUrl.classList.add('text-blue-500', 'hover:text-blue-700', 'font-semibold');
+    projectUrl.target = '_blank';  // Opens in new tab
 
-            projectLinks.appendChild(projectUrl);
-            projectLinks.appendChild(projectCodeUrl);
+    projectLinks.appendChild(projectUrl);
+    projectLinks.appendChild(projectCodeUrl);
 
-            projectCard.appendChild(projectImg);
-            projectCard.appendChild(projectName);
-            projectCard.appendChild(projectDesc);
-            projectCard.appendChild(projectLinks);
+    projectCard.appendChild(projectImg);
+    projectCard.appendChild(projectName);
+    projectCard.appendChild(projectDesc);
+    projectCard.appendChild(projectLinks);
 
-            projectsContainer.appendChild(projectCard);
-        });
+    projectsContainer.appendChild(projectCard);
+});
 
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const serviceID = 'service_07fjd5k';
-            const templateID = 'template_pavlznx';
-
-            emailjs.sendForm(serviceID, templateID, this)
-                .then(function(response) {
-                    alert('Message sent successfully!');
-                }, function(error) {
-                    alert('Failed to send the message. Please try again later.');
-                });
-
-            event.target.reset();
-        });
+        // document.getElementById('contact-form').addEventListener('submit', function(event) {
+            // event.preventDefault();
+// 
+            // const serviceID = 'service_07fjd5k';
+            // const templateID = 'template_pavlznx';
+// 
+            // emailjs.sendForm(serviceID, templateID, this)
+                // .then(function(response) {
+                    // alert('Message sent successfully!');
+                // }, function(error) {
+                    // alert('Failed to send the message. Please try again later.');
+                // });
+// 
+            // event.target.reset();
+        // });
 
 
 
@@ -593,7 +592,7 @@ const products = [
         description: "Restaurant Website",
         url: "https://burger-shop-rho.vercel.app/",
         code_url: "https://github.com/bindles/burger-shop", // Example code URL
-        image: "img/ws-thumb-burger.png"
+        image: "img/ws-thumb-burger-01.png"
     },
     {
         name: "Pro Wraps",
@@ -627,16 +626,19 @@ products.forEach(product => {
     productUrl.href = product.url;
     productUrl.textContent = product.url;
     productUrl.classList.add('text-blue-500', 'underline', 'mb-4', 'block');
+    productUrl.target = '_blank';  // Opens in new tab
 
     const viewSiteButton = document.createElement('a');
     viewSiteButton.href = product.url;
     viewSiteButton.textContent = 'View Site';
     viewSiteButton.classList.add('mt-4', 'bg-black', 'text-white', 'py-2', 'px-4', 'w-1/2', 'hover:bg-white', 'hover:text-black', 'border-2', 'border-black', 'block', 'text-center', 'no-underline');
+    viewSiteButton.target = '_blank';  // Opens in new tab
 
     const viewCodeButton = document.createElement('a');
     viewCodeButton.href = product.code_url;
     viewCodeButton.textContent = 'View Code';
     viewCodeButton.classList.add('mt-4', 'bg-black', 'text-white', 'py-2', 'px-4', 'w-1/2', 'hover:bg-white', 'hover:text-black', 'border-2', 'border-black', 'block', 'text-center', 'no-underline');
+    viewCodeButton.target = '_blank';  // Opens in new tab
 
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('flex', 'space-x-2');
