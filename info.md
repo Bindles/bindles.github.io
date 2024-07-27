@@ -34,3 +34,41 @@
         </form>
     </div>
 </section>
+
+
+<!-- SKILL BEFORE CHANGE PACE SLOWER-->
+
+                    // Calculate the number of skills to show based on screen size
+                    const numSkillsToShow = Math.floor(window.innerWidth / 150); // Adjust 150 according to your preference
+
+                    // Clone skills array to create a looping effect
+                    const allSkills = [...skills, ...skills];
+
+                    // Create skill elements and append them to the container
+                    allSkills.forEach(skill => {
+                        const skillDiv = document.createElement('div');
+                        skillDiv.classList.add('skill-item');
+
+                        const skillImg = document.createElement('img');
+                        skillImg.src = skill.url;
+                        skillImg.alt = skill.name;
+
+                        const skillName = document.createElement('span');
+                        skillName.textContent = skill.name;
+                        skillName.classList.add('text-center', 'text-gray-800', 'text-2xl', 'mt-2');
+
+                        skillDiv.appendChild(skillImg);
+                        skillDiv.appendChild(skillName);
+
+                        document.querySelector('.skills-container').appendChild(skillDiv);
+                    });
+
+                    // Function to scroll the skills container
+                    function scrollSkillsContainer() {
+                        const container = document.querySelector('.skills-container');
+                        container.scrollBy({ left: 1, behavior: 'smooth' });
+                    }
+
+                    // Start the scroll effect
+                    setInterval(scrollSkillsContainer, 12); // Adjust the interval and scroll amount as needed
+                </script>
